@@ -1,0 +1,1 @@
+# Spott---AI-event-Organizer-
