@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Spott Project Setup Guide
 
 Welcome to the Spott project! This guide will help you set up the project locally on your machine.
@@ -90,3 +91,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 -   `npm run build`: Builds the application for production.
 -   `npm run start`: Starts the production server.
 -   `npm run lint`: Runs ESLint to check for code quality issues.
+=======
+# Spott---AI-event-Organizer-
+>>>>>>> 82209b7e67b06c43f258d855a398b913142ec40b
