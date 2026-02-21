@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 58, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/pcc/Desktop/Spott-AI-Event-Organizer-master/proxy.js"],"sourcesContent":["import { clerkMiddleware, createRouteMatcher } from \"@clerk/nextjs/server\";\nimport { NextResponse } from \"next/server\";\n\nconst isProtected = createRouteMatcher([\n  \"/my-events(.*)\",\n  \"/create-events(.*)\",\n  \"/my-tickets(.*)\",\n]);\n\nexport default clerkMiddleware(async (auth, req) => {\n  const { userId, redirectToSignIn } = await auth();\n  if (!userId && isProtected(req)) {\n    return redirectToSignIn();\n  }\n  return NextResponse.next();\n});\n\nexport const config = {\n  matcher: [\n    // Skip Next.js internals and all static files, unless found in search params\n    \"/((?!_next|[^?]*\\\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)\",\n    // Always run for API routes\n    \"/(api|trpc)(.*)\",\n  ],\n};\n"],"names":[],"mappings":";;;;;;AAAA;AAAA;AACA;;;AAEA,MAAM,cAAc,IAAA,gMAAkB,EAAC;IACrC;IACA;IACA;CACD;uCAEc,IAAA,gMAAe,EAAC,OAAO,MAAM;IAC1C,MAAM,EAAE,MAAM,EAAE,gBAAgB,EAAE,GAAG,MAAM;IAC3C,IAAI,CAAC,UAAU,YAAY,MAAM;QAC/B,OAAO;IACT;IACA,OAAO,8IAAY,CAAC,IAAI;AAC1B;AAEO,MAAM,SAAS;IACpB,SAAS;QACP,6EAA6E;QAC7E;QACA,4BAA4B;QAC5B;KACD;AACH"}}]
+}
